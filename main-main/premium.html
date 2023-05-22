@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/premium.css">
+    <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+	<script src="libs/swiper/swiper-bundle.min.js" defer></script>
+	<script src="libs/particles/particles.js" defer></script>
+    <script src="./js/app.js" defer></script>
+    <title>Подписка</title>
+</head>
+<body>
+    <a href="./hub.html">Назад</a>
+
+    <header>
+        <nav>
+            <ul class="qwe">
+                <li><a href="./preminfo.html" class="zxc">как работает подиписка</a></li>
+                <li><a href="" class="zxc">Новости</a></li>
+                <li><a href="" class="zxc">Связь с поддержкой</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="swiper-slide slider__item">
+        <canvas class="particles slider__layer" data-swiper-parallax="25%" data-color="#938086"></canvas>
+    </div>
+    <main>
+        <div class="prem">
+        <section>
+            <h1>Обычная</h1>
+            <p>Бесплатно</p>
+            <form action="./pay.html">
+                <button class="atf noselect" value="купить" title="Бесплатная подписка не имеет каких-либо преимуществ по сравнению с другими">купить</button>
+            </form>
+            
+        </section>
+    </div>
+    <div class="block-hover" data-movex=100><p>Бесплатная подписка</p>
+        <script>
+            document.querySelector('.block').onmouseover = function() {
+  let x = +(this.dataset.movex);
+  this.style.transform = 'translateX(' + x + 'px)';
+}
+        </script>
+    </div>
+
+    <div class="prem2">
+        <section>
+            <h2>Стандарт +</h2>
+            <p>299 руб</p>
+            <p>больше заявок для поиска</p>
+            <form action="./pay2.html">
+            <button class="atf noselect" onclick="" value="купить" title="Данная подписка делает вас более привелегирьованным клиентом нашего сайта">купить</button>
+        </form>
+        </section>
+    </div>
+    <div class="block-hover2"><p>Подписка "Стандарт +" делает пользователя нашего сайта более привелигированным, поддержка отвечает быстре, а также пользователь сможет предлагать свои фотографии, которые будет одобрять администрация сайта </p></div>
+
+    <div class="prem3">
+        <section>
+            <h3>Премиум</h3>
+            <p>499 руб</p>
+            <p>больше заявок для поиска</p>
+            <p>Быстрые ответы от модераторов сайта</p>
+            <form action="./pay3.html">
+            <button class="atf noselect" onclick="" value="купить" title="Данная подписка делает вас более привелегирьованным клиентом нашего сайта">купить</button>
+        </form>
+        </section>
+    </div>
+    <div class="block-hover3"><p>Премиум подписка дает еще больше возможностей. Снимает ограничение на создание команд, а также пользователь может фильтровать фотографии по категориям которые нравятся ему</p></div>
+    </main>
+</body>
+</html>
