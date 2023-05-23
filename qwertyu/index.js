@@ -30,7 +30,6 @@ open({
   //.......regist......................
   app.post('/people/register', async (req, res) => {
     const row = { nickname, email, password } = req.body;
-    const zapros = `SELECT * FROM People WHERE email = "${email}"`
 
     const result = await db.all(`SELECT * FROM People WHERE email = "${email}"`)
     console.log(result)
@@ -39,7 +38,7 @@ open({
     }
 
     else {
-      const userAdd = async (res, req) => {
+      const userAdd = async (res) => {
        await db.run(`INSERT INTO People (nickname, email, password) VALUES ("${nickname}", "${email}", "${password}")`, (err) => {
           if (err) {
             return res.status(500).json({ message: 'Ошибка при добавлении пользователя в базу данных' });
@@ -51,7 +50,7 @@ open({
 
         )
       }
-      userAdd()
+      userAdd(res)
     }
     return res.json({ nickname, email, password });
     
@@ -94,7 +93,7 @@ open({
     const pass = await db.all(`SELECT * FROM People WHERE email = "${password}"`)
     const nick = await db.all(`SELECT * FROM People WHERE email = "${nickname}"`)
       console.log(logData)
-      if ((log.length > 0 && pass.length>0) && (logData.email ===`${email}`) && (logData.password===`${password}`) ) {
+      if ((log.length > 0 && pass.length>0) && (logData.email ===`${email}`) && (md5(logData.password)===md5(`${password}`)) ) {
         return res.json({ message: 'Добро пожаловать!' });
         
       }
